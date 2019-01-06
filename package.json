@@ -1,0 +1,28 @@
+{
+  "name": "cms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Bykov Igor <igorb.dev@websm.io>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^10.12.18",
+    "inversify": "^5.0.1",
+    "koa": "^2.6.2",
+    "koa-better-router": "^2.1.1",
+    "koa-helmet": "^4.0.0",
+    "koa-jwt": "^3.5.1",
+    "koa-router": "^7.4.0",
+    "nodemon": "^1.18.9",
+    "reflect-metadata": "^0.1.12",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "javascript-typescript-langserver": "^2.11.1"
+  },
+  "scripts": {
+    "langserver": "javascript-typescript-langserver",
+    "build": "tsc",
+    "start": "nodemon --watch ./dist/**/* ./dist/server.js",
+    "watch": "nodemon --watch ./src/**/* --exec npx tsc"
+  }
+}
