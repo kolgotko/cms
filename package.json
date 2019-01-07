@@ -2,10 +2,11 @@
   "name": "cms",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Bykov Igor <igorb.dev@websm.io>",
+  "author": "Bykov Igor <con29rus@live.ru>",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^10.12.18",
+    "dotenv": "^6.2.0",
     "inversify": "^5.0.1",
     "koa": "^2.6.2",
     "koa-better-router": "^2.1.1",
