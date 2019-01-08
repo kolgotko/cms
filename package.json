@@ -5,11 +5,11 @@
   "author": "Bykov Igor <con29rus@live.ru>",
   "license": "MIT",
   "dependencies": {
+    "@koa/cors": "2",
     "@types/node": "^10.12.18",
     "dotenv": "^6.2.0",
     "inversify": "^5.0.1",
     "koa": "^2.6.2",
-    "koa-better-router": "^2.1.1",
     "koa-bodyparser": "^4.2.1",
     "koa-helmet": "^4.0.0",
     "koa-jwt": "^3.5.1",
@@ -21,12 +21,17 @@
     "typescript": "^3.2.2"
   },
   "devDependencies": {
-    "javascript-typescript-langserver": "^2.11.1"
+    "javascript-typescript-langserver": "^2.11.1",
+    "ts-node": "^7.0.1"
   },
   "scripts": {
+    "migration-create": "typeorm migration:create",
+    "migration-run": "typeorm migration:run",
+    "migration-revert": "typeorm migration:revert",
     "langserver": "javascript-typescript-langserver",
     "build": "tsc",
-    "start": "nodemon --watch ./dist ./dist/server.js",
-    "watch": "nodemon --watch ./src --exec npx tsc"
+    "watch": "nodemon --watch ./src --exec tsc",
+    "start": "nodemon ./dist/server.js",
+    "start-dev": "nodemon -e js,ts,json --ignore ./dist --exec 'tsc && typeorm migration:run && node ./dist/server.js'"
   }
 }

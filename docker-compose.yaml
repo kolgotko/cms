@@ -13,6 +13,8 @@ services:
       APP_LISTEN_PORT: 3030
       APP_JWT_SECRET: secret
 
+    command: yarn run migration-run && yarn run start
+
     depends_on:
       - postgres
 

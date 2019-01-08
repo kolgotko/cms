@@ -4,3 +4,5 @@ services:
   app:
     volumes:
       - ./:/usr/local/share/app
+
+    command: yarn run start-dev
